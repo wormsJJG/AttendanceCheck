@@ -12,11 +12,6 @@ class AddViewController: UIViewController {
     var sections:Array<String> = ["제목","명단"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
-    }
-    private func setup(){
-        title = "명단 추가"
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 ///MARK - TableViewSetup
@@ -41,8 +36,4 @@ extension AddViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
-    
-    
-    
-    
 }

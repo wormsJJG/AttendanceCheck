@@ -2,16 +2,9 @@ import UIKit
 
 class HomeViewController: UIViewController{
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
     }
-    private func setup() {
-        title = "출석부"
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     
