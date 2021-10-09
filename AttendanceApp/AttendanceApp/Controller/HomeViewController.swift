@@ -20,6 +20,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let CalendarVC = storyboard.instantiateViewController(identifier: "CalendarVC")
+        navigationController?.pushViewController(CalendarVC, animated: true)
+    }
     
   
 }
