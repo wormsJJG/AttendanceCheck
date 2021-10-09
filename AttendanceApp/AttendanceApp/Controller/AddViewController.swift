@@ -15,8 +15,7 @@ class AddViewController: UIViewController {
         setup()
     }
     private func setup(){
-        title = "명단 추가"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
 }
 ///MARK - TableViewSetup

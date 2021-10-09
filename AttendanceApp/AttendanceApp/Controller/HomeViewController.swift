@@ -8,8 +8,7 @@ class HomeViewController: UIViewController{
         setup()
     }
     private func setup() {
-        title = "출석부"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
     
 }
