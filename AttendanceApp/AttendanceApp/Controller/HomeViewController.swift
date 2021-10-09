@@ -2,15 +2,9 @@ import UIKit
 
 class HomeViewController: UIViewController{
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
     }
-    private func setup() {
-        
-    }
-    
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     
