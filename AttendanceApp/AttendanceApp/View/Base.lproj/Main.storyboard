@@ -185,11 +185,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="iqn-Ct-EhK" kind="relationship" relationship="rootViewController" id="FbK-Su-UfC"/>
+                        <segue destination="iqn-Ct-EhK" kind="relationship" relationship="rootViewController" id="r4A-Gb-Eb1"/>
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="362" y="589"/>
+            <point key="canvasLocation" x="55" y="553"/>
         </scene>
         <!--날짜선택-->
         <scene sceneID="Opu-4H-inL">
@@ -221,25 +221,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Njj-1i-Vvi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1240.5797101449277" y="588.61607142857144"/>
+            <point key="canvasLocation" x="881" y="552"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="vyN-JW-viG">
+        <scene sceneID="C9S-wf-9W9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IxI-rv-omm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController id="Ykr-yi-7Km" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ejy-43-P19">
+                <navigationController id="jas-BR-31p" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7wS-Iz-FFj">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="1BR-3v-1E2" kind="relationship" relationship="rootViewController" id="nzD-ZX-dhE"/>
+                        <segue destination="1BR-3v-1E2" kind="relationship" relationship="rootViewController" id="Ilo-m4-8vg"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T6B-Gf-6BI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961" y="589"/>
+            <point key="canvasLocation" x="1697" y="543"/>
         </scene>
-        <!--Title-->
+        <!--명단-->
         <scene sceneID="z2x-fY-OSE">
             <objects>
                 <viewController storyboardIdentifier="ShowVC" id="1BR-3v-1E2" customClass="ShowViewController" customModule="AttendanceApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -247,7 +247,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Xwr-h5-yU7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Xwr-h5-yU7">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listNameCell" id="0NT-TU-RgR">
@@ -304,11 +304,11 @@
                             <constraint firstItem="Xwr-h5-yU7" firstAttribute="top" secondItem="D0I-wO-jRq" secondAttribute="top" id="lBe-nT-ZBj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="always" id="JLP-ab-Vwc"/>
+                    <navigationItem key="navigationItem" title="명단" largeTitleDisplayMode="always" id="JLP-ab-Vwc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjx-fw-ENf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2694.202898550725" y="588.61607142857144"/>
+            <point key="canvasLocation" x="2602.898550724638" y="551.11607142857144"/>
         </scene>
     </scenes>
     <resources>

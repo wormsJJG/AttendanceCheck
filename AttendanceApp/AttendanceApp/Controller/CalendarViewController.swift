@@ -5,9 +5,9 @@ class CalendarViewController: UIViewController{
     @IBOutlet weak var calendar: FSCalendar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        calendarSetup()
+        setupFSCalendar()
     }
-    private func calendarSetup(){
+    private func setupFSCalendar(){
         calendar.delegate = self
         calendar.dataSource = self
         calendar.appearance.headerDateFormat = "YYYY년 M월"
