@@ -43,7 +43,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="15" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="groupNameCell" id="1ka-6h-Ytw">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="groupNameCell" id="1ka-6h-Ytw" customClass="GroupCollectionViewCell" customModule="AttendanceApp" customModuleProvider="target">
                                         <rect key="frame" x="22.5" y="15" width="369" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="u9l-ku-4gG">
@@ -74,6 +74,9 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <size key="customSize" width="369" height="100"/>
+                                        <connections>
+                                            <outlet property="groupNameLabel" destination="qsm-sK-Dmw" id="TFu-oA-Iqv"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -178,7 +181,6 @@
         <!--Navigation Controller-->
         <scene sceneID="kic-kv-tOS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mgK-AH-XHY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="bvy-zK-Tlg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="CCp-Md-qDm">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -188,6 +190,7 @@
                         <segue destination="iqn-Ct-EhK" kind="relationship" relationship="rootViewController" id="r4A-Gb-Eb1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgK-AH-XHY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="55" y="553"/>
         </scene>
@@ -239,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="1697" y="543"/>
         </scene>
-        <!--명단-->
+        <!--출석부-->
         <scene sceneID="z2x-fY-OSE">
             <objects>
                 <viewController storyboardIdentifier="ShowVC" id="1BR-3v-1E2" customClass="ShowViewController" customModule="AttendanceApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -249,8 +252,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Xwr-h5-yU7">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listNameCell" id="0NT-TU-RgR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listNameCell" id="0NT-TU-RgR" customClass="ListNameTableViewCell" customModule="AttendanceApp" customModuleProvider="target">
                                         <rect key="frame" x="20" y="49.5" width="374" height="46.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0NT-TU-RgR" id="3G1-VJ-ov7">
@@ -287,6 +291,11 @@
                                                 <constraint firstItem="I8g-zs-3Yx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3G1-VJ-ov7" secondAttribute="leading" constant="20" symbolic="YES" id="yJb-ee-g0Q"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="nameListLabel" destination="EwQ-z9-0Ml" id="chm-AM-yhS"/>
+                                            <outlet property="statusLabel" destination="I8g-zs-3Yx" id="R7L-Fa-VHd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -304,7 +313,7 @@
                             <constraint firstItem="Xwr-h5-yU7" firstAttribute="top" secondItem="D0I-wO-jRq" secondAttribute="top" id="lBe-nT-ZBj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="명단" largeTitleDisplayMode="always" id="JLP-ab-Vwc"/>
+                    <navigationItem key="navigationItem" title="출석부" id="JLP-ab-Vwc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjx-fw-ENf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

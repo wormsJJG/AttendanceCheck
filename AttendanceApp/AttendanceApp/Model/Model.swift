@@ -6,4 +6,8 @@ class Attendance: Object {
     dynamic var nameList:[String] = []
     dynamic var date:Int = 0
     dynamic var status:String = ""
+    
+    override static func primaryKey() -> String? {
+        return "groupName"
+    }
 }

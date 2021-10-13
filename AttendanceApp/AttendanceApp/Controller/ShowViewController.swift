@@ -25,6 +25,11 @@ extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
         
         return cell
     }
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "명단"
+    }
     
 }
