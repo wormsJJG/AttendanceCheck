@@ -18,6 +18,7 @@ extension CalendarViewController: FSCalendarDelegate,FSCalendarDataSource{
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let ShowVC = storyboard.instantiateViewController(identifier: "ShowVC")
+        print("선택한 날짜는 \(date)")
         navigationController?.pushViewController(ShowVC, animated: true)
     }   
 }

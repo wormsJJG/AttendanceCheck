@@ -54,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF01AD292716B6300085AEAE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AF01AD2527169F460085AEAE /* ListNameTableViewCell.swift */,
+				AF01AD272716A06E0085AEAE /* GroupCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		AFC3F85826FF195C009A00F2 = {
 			isa = PBXGroup;
 			children = (
@@ -102,8 +111,7 @@
 				AFBC5BC62708720D00A93682 /* AddViewController.swift */,
 				AFBC5BC8270886D700A93682 /* CalendarViewController.swift */,
 				AFDA58A6270B1CD100FFCFDB /* ShowViewController.swift */,
-				AF01AD2527169F460085AEAE /* ListNameTableViewCell.swift */,
-				AF01AD272716A06E0085AEAE /* GroupCollectionViewCell.swift */,
+				AF01AD292716B6300085AEAE /* Cell */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
