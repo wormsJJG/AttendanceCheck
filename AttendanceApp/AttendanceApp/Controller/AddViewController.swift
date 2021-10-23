@@ -6,13 +6,22 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddViewController: UIViewController {
-
+///MARK - Realm
+//    let realmInstance = try! Realm()
+    
+    func addAttendanceCheckGroup(_ groupName:String,_ nameList:[String])->Attendance{
+        let attendance = Attendance()
+        return attendance
+    }
+    
     var sections:Array<String> = ["제목","명단"]
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
 }
 ///MARK - TableViewSetup
 extension AddViewController: UITableViewDataSource,UITableViewDelegate{
@@ -37,3 +46,4 @@ extension AddViewController: UITableViewDataSource,UITableViewDelegate{
         return sections[section]
     }
 }
+

@@ -20,6 +20,7 @@
 		AFC3F87C2705F038009A00F2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3F87B2705F038009A00F2 /* HomeViewController.swift */; };
 		AFDA58A5270B1AFA00FFCFDB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA58A4270B1AFA00FFCFDB /* Model.swift */; };
 		AFDA58A7270B1CD100FFCFDB /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA58A6270B1CD100FFCFDB /* ShowViewController.swift */; };
+		AFE7D74D2724283000C3F0BC /* addViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE7D74C2724283000C3F0BC /* addViewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		AFC3F87B2705F038009A00F2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AFDA58A4270B1AFA00FFCFDB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AFDA58A6270B1CD100FFCFDB /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		AFE7D74C2724283000C3F0BC /* addViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewTableViewCell.swift; sourceTree = "<group>"; };
 		C3CD98EF47994D850B63664E /* Pods-AttendanceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AttendanceApp.debug.xcconfig"; path = "Target Support Files/Pods-AttendanceApp/Pods-AttendanceApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +61,7 @@
 			children = (
 				AF01AD2527169F460085AEAE /* ListNameTableViewCell.swift */,
 				AF01AD272716A06E0085AEAE /* GroupCollectionViewCell.swift */,
+				AFE7D74C2724283000C3F0BC /* addViewTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				AF01AD282716A06E0085AEAE /* GroupCollectionViewCell.swift in Sources */,
 				AFC3F86726FF195C009A00F2 /* SceneDelegate.swift in Sources */,
 				AFDA58A5270B1AFA00FFCFDB /* Model.swift in Sources */,
+				AFE7D74D2724283000C3F0BC /* addViewTableViewCell.swift in Sources */,
 				AFBC5BC72708720D00A93682 /* AddViewController.swift in Sources */,
 				AF01AD2627169F460085AEAE /* ListNameTableViewCell.swift in Sources */,
 				AFC3F87C2705F038009A00F2 /* HomeViewController.swift in Sources */,

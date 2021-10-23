@@ -1,7 +1,16 @@
 import UIKit
+import Realm
 
 class HomeViewController: UIViewController{
+    var attendances = [Attendance]()
     
+    //MARK: - Realm
+    func getAllAttendance(){
+        
+    }
+    func deleteAttendance(item: Attendance){
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
