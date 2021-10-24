@@ -14,9 +14,9 @@ class ListNameTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cellSetup()
+        setupCell()
     }
-    private func cellSetup(){
+    private func setupCell(){
         statusLabel.isEnabled = false
     }
 

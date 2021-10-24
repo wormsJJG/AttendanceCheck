@@ -2,7 +2,7 @@ import UIKit
 import Realm
 
 class HomeViewController: UIViewController{
-    var attendances = [Attendance]()
+    var attendances:[Attendance] = []
     
     //MARK: - Realm
     func getAllAttendance(){
