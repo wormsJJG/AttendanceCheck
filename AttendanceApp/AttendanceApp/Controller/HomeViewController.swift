@@ -6,11 +6,10 @@ class HomeViewController: UIViewController{
     
     //MARK: - Realm
     func getAllAttendance(){
-        
     }
     func deleteAttendance(item: Attendance){
-        
     }
+    //MARK: - Realm End
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -24,9 +23,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "groupNameCell", for: indexPath) as
                 UICollectionViewCell
-        
         cell.layer.cornerRadius = 12.0
-        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -34,7 +31,5 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let CalendarVC = storyboard.instantiateViewController(identifier: "CalendarVC")
         navigationController?.pushViewController(CalendarVC, animated: true)
     }
-    
-  
 }
 

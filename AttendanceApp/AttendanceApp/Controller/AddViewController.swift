@@ -17,8 +17,7 @@ class AddViewController: UIViewController {
         return attendance
     }
     
-    var sections:Array<String> = ["제목","명단"]
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
     }
     
@@ -26,10 +25,7 @@ class AddViewController: UIViewController {
 ///MARK - TableViewSetup
 extension AddViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        }
-        return 10
+      return 11
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,11 +35,11 @@ extension AddViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section]
+        return "명단"
     }
 }
 
