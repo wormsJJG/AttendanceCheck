@@ -17,7 +17,7 @@ class HomeViewController: UIViewController{
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -31,5 +31,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let CalendarVC = storyboard.instantiateViewController(identifier: "CalendarVC")
         navigationController?.pushViewController(CalendarVC, animated: true)
     }
+    
 }
 

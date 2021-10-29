@@ -9,6 +9,7 @@ import UIKit
 
 class addViewTableViewCell: UITableViewCell {
    
+    @IBOutlet weak var listNameTextField: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

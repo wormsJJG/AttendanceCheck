@@ -10,18 +10,39 @@ import RealmSwift
 
 class AddViewController: UIViewController {
 ///MARK - Realm
-//    let realmInstance = try! Realm()
+    let realm = try! Realm()
     
-    func addAttendanceCheckGroup(_ groupName:String,_ nameList:[String])->Attendance{
+    @IBOutlet weak var groupNameTextField: UITextField!
+    
+    func createAttendanceCheckGroup(){
         let attendance = Attendance()
-        return attendance
+        if let groupName = groupNameTextField.text {
+            attendance.groupName = groupName
+        }
+        try! realm.write{
+            realm.add(attendance)
+        }
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
-    
+//    func addAttendanceCheckGroup(_ groupName:String,_ nameList:[String])->Attendance{
+//        let attendance = Attendance()
+//        return attendance
+//    }
         override func viewDidLoad() {
         super.viewDidLoad()
     }
+    struct Student {
+        var name:String
+    }
+    
+    var list:[Student] = [Student(name: "")]
+    
+    func create(_ student:Student){
+        list.append(student)
+    }
     
 }
+
 ///MARK - TableViewSetup
 extension AddViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,4 +63,5 @@ extension AddViewController: UITableViewDataSource,UITableViewDelegate{
         return "명단"
     }
 }
+
 
