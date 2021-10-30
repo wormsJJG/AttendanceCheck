@@ -208,6 +208,9 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="추가"/>
+                                <connections>
+                                    <action selector="AddButton:" destination="COH-P7-E8S" eventType="touchUpInside" id="mF0-9x-PVi"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

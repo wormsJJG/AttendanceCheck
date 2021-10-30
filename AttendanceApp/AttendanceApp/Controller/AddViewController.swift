@@ -9,7 +9,13 @@ import UIKit
 import RealmSwift
 
 class AddViewController: UIViewController {
-///MARK - Realm
+    
+    
+    @IBAction func AddButton(_ sender: Any) {
+        createAttendanceCheckGroup()
+    }
+    
+    ///MARK - Realm
     let realm = try! Realm()
     
     @IBOutlet weak var groupNameTextField: UITextField!
@@ -22,7 +28,6 @@ class AddViewController: UIViewController {
         try! realm.write{
             realm.add(attendance)
         }
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 //    func addAttendanceCheckGroup(_ groupName:String,_ nameList:[String])->Attendance{
 //        let attendance = Attendance()
