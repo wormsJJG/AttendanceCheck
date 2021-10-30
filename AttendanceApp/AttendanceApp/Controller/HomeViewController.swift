@@ -1,7 +1,15 @@
 import UIKit
+import Realm
 
 class HomeViewController: UIViewController{
+    var attendances:[Attendance] = []
     
+    //MARK: - Realm
+    func getAllAttendance(){
+    }
+    func deleteAttendance(item: Attendance){
+    }
+    //MARK: - Realm End
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -9,15 +17,13 @@ class HomeViewController: UIViewController{
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "groupNameCell", for: indexPath) as
                 UICollectionViewCell
-        
         cell.layer.cornerRadius = 12.0
-        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -26,6 +32,5 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         navigationController?.pushViewController(CalendarVC, animated: true)
     }
     
-  
 }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B76115EADEA2A999AB452FE /* Pods_AttendanceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DD98C14E9B7F06145EA4B3 /* Pods_AttendanceApp.framework */; };
+		AF01AD2627169F460085AEAE /* ListNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01AD2527169F460085AEAE /* ListNameTableViewCell.swift */; };
+		AF01AD282716A06E0085AEAE /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01AD272716A06E0085AEAE /* GroupCollectionViewCell.swift */; };
 		AFBC5BC72708720D00A93682 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC5BC62708720D00A93682 /* AddViewController.swift */; };
 		AFBC5BC9270886D700A93682 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC5BC8270886D700A93682 /* CalendarViewController.swift */; };
 		AFC3F86526FF195C009A00F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3F86426FF195C009A00F2 /* AppDelegate.swift */; };
@@ -18,11 +20,14 @@
 		AFC3F87C2705F038009A00F2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3F87B2705F038009A00F2 /* HomeViewController.swift */; };
 		AFDA58A5270B1AFA00FFCFDB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA58A4270B1AFA00FFCFDB /* Model.swift */; };
 		AFDA58A7270B1CD100FFCFDB /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA58A6270B1CD100FFCFDB /* ShowViewController.swift */; };
+		AFE7D74D2724283000C3F0BC /* addViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE7D74C2724283000C3F0BC /* addViewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05DD98C14E9B7F06145EA4B3 /* Pods_AttendanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AttendanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE8A49011AD64DE223A5749 /* Pods-AttendanceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AttendanceApp.release.xcconfig"; path = "Target Support Files/Pods-AttendanceApp/Pods-AttendanceApp.release.xcconfig"; sourceTree = "<group>"; };
+		AF01AD2527169F460085AEAE /* ListNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNameTableViewCell.swift; sourceTree = "<group>"; };
+		AF01AD272716A06E0085AEAE /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		AFBC5BC62708720D00A93682 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		AFBC5BC8270886D700A93682 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		AFC3F86126FF195C009A00F2 /* AttendanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AttendanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +40,7 @@
 		AFC3F87B2705F038009A00F2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AFDA58A4270B1AFA00FFCFDB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AFDA58A6270B1CD100FFCFDB /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		AFE7D74C2724283000C3F0BC /* addViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewTableViewCell.swift; sourceTree = "<group>"; };
 		C3CD98EF47994D850B63664E /* Pods-AttendanceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AttendanceApp.debug.xcconfig"; path = "Target Support Files/Pods-AttendanceApp/Pods-AttendanceApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +56,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF01AD292716B6300085AEAE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AF01AD2527169F460085AEAE /* ListNameTableViewCell.swift */,
+				AF01AD272716A06E0085AEAE /* GroupCollectionViewCell.swift */,
+				AFE7D74C2724283000C3F0BC /* addViewTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		AFC3F85826FF195C009A00F2 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +114,7 @@
 				AFBC5BC62708720D00A93682 /* AddViewController.swift */,
 				AFBC5BC8270886D700A93682 /* CalendarViewController.swift */,
 				AFDA58A6270B1CD100FFCFDB /* ShowViewController.swift */,
+				AF01AD292716B6300085AEAE /* Cell */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,9 +261,12 @@
 				AFBC5BC9270886D700A93682 /* CalendarViewController.swift in Sources */,
 				AFDA58A7270B1CD100FFCFDB /* ShowViewController.swift in Sources */,
 				AFC3F86526FF195C009A00F2 /* AppDelegate.swift in Sources */,
+				AF01AD282716A06E0085AEAE /* GroupCollectionViewCell.swift in Sources */,
 				AFC3F86726FF195C009A00F2 /* SceneDelegate.swift in Sources */,
 				AFDA58A5270B1AFA00FFCFDB /* Model.swift in Sources */,
+				AFE7D74D2724283000C3F0BC /* addViewTableViewCell.swift in Sources */,
 				AFBC5BC72708720D00A93682 /* AddViewController.swift in Sources */,
+				AF01AD2627169F460085AEAE /* ListNameTableViewCell.swift in Sources */,
 				AFC3F87C2705F038009A00F2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

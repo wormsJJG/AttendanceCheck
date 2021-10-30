@@ -6,21 +6,47 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddViewController: UIViewController {
-
-    var sections:Array<String> = ["제목","명단"]
-    override func viewDidLoad() {
+///MARK - Realm
+    let realm = try! Realm()
+    
+    @IBOutlet weak var groupNameTextField: UITextField!
+    
+    func createAttendanceCheckGroup(){
+        let attendance = Attendance()
+        if let groupName = groupNameTextField.text {
+            attendance.groupName = groupName
+        }
+        try! realm.write{
+            realm.add(attendance)
+        }
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+    }
+//    func addAttendanceCheckGroup(_ groupName:String,_ nameList:[String])->Attendance{
+//        let attendance = Attendance()
+//        return attendance
+//    }
+        override func viewDidLoad() {
         super.viewDidLoad()
     }
+    struct Student {
+        var name:String
+    }
+    
+    var list:[Student] = [Student(name: "")]
+    
+    func create(_ student:Student){
+        list.append(student)
+    }
+    
 }
+
 ///MARK - TableViewSetup
 extension AddViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        }
-        return 10
+      return 11
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,10 +56,12 @@ extension AddViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section]
+        return "명단"
     }
 }
+
+
