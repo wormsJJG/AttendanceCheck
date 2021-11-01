@@ -231,7 +231,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="iqn-Ct-EhK" kind="relationship" relationship="rootViewController" id="r4A-Gb-Eb1"/>
+                        <segue destination="iqn-Ct-EhK" kind="relationship" relationship="rootViewController" id="yXb-Kk-0EF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgK-AH-XHY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -279,12 +279,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="1BR-3v-1E2" kind="relationship" relationship="rootViewController" id="SfT-dh-d9s"/>
+                        <segue destination="1BR-3v-1E2" kind="relationship" relationship="rootViewController" id="u83-Pk-FLw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6B-Gf-6BI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1743" y="594"/>
+            <point key="canvasLocation" x="1716" y="784"/>
         </scene>
         <!--출석부-->
         <scene sceneID="z2x-fY-OSE">
@@ -295,7 +295,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="MXg-Pu-ADI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listNameCell" id="yyc-0h-VnY" customClass="ListNameTableViewCell" customModule="AttendanceApp" customModuleProvider="target">

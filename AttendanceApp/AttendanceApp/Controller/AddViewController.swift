@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 class AddViewController: UIViewController {
-    
+    let name:String? = nil
     
     @IBAction func AddButton(_ sender: Any) {
         createAttendanceCheckGroup()
@@ -25,38 +25,33 @@ class AddViewController: UIViewController {
         if let groupName = groupNameTextField.text {
             attendance.groupName = groupName
         }
+        
         try! realm.write{
             realm.add(attendance)
         }
     }
-//    func addAttendanceCheckGroup(_ groupName:String,_ nameList:[String])->Attendance{
-//        let attendance = Attendance()
-//        return attendance
-//    }
-        override func viewDidLoad() {
+    //    func addAttendanceCheckGroup(_ groupName:String,_ nameList:[String])->Attendance{
+    //        let attendance = Attendance()
+    //        return attendance
+    //    }
+    override func viewDidLoad() {
         super.viewDidLoad()
     }
-    struct Student {
-        var name:String
-    }
-    
-    var list:[Student] = [Student(name: "")]
-    
-    func create(_ student:Student){
-        list.append(student)
-    }
+ 
+
+   
     
 }
 
 ///MARK - TableViewSetup
 extension AddViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 11
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "textFieldCell", for: indexPath) as UITableViewCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "textFieldCell", for: indexPath) as! addViewTableViewCell
+        cell.listNameTextField.text = name
         return cell
     }
     
