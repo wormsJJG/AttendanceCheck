@@ -9,25 +9,29 @@ import UIKit
 
 class addViewTableViewCell: UITableViewCell,UITextFieldDelegate {
     @IBOutlet weak var listNameTextField: UITextField!
-    
- 
-    var list:[String] = []
 
-    func create(_ name:String?){
-        list.append(name ?? "")
-        print(list,"asdasdasdsad")
+    struct Student {
+        var name:String
     }
+ 
+//    var list:[Student] = [Student(name: ""]
+
+//    func create(_ student:Student){
+//        list.append(student)
+//        print(list,"asdasdasdsad")
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         listNameTextField.resignFirstResponder()
-        create(listNameTextField.text)
+//        create(listNameTextField.text)
         print("클릭")
         return true
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        listNameTextField.returnKeyType = .done
-        textFieldShouldReturn(listNameTextField)
+//        listNameTextField.returnKeyType = .done
+//        textFieldShouldReturn(listNameTextField)
+        
     }
 
 
