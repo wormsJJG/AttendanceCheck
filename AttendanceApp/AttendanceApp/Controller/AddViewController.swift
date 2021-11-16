@@ -8,9 +8,10 @@
 import UIKit
 import RealmSwift
 
-class AddViewController: UIViewController {
-    let name:String? = nil
+class AddViewController: UIViewController,UITextFieldDelegate {
     
+    let cell = addViewTableViewCell()
+    @IBOutlet weak var insertStudentNameTableView: UITableView!
     @IBAction func AddButton(_ sender: Any) {
         createAttendanceCheckGroup()
     }
@@ -28,30 +29,28 @@ class AddViewController: UIViewController {
         
         try! realm.write{
             realm.add(attendance)
+            navigationController?.popViewController(animated: true)
         }
+        
     }
-    //    func addAttendanceCheckGroup(_ groupName:String,_ nameList:[String])->Attendance{
-    //        let attendance = Attendance()
-    //        return attendance
-    //    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
- 
-
-   
+    override func viewWillAppear(_ animated: Bool) {
+        insertStudentNameTableView.reloadData()
+    }
     
 }
-
 ///MARK - TableViewSetup
 extension AddViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return cell.studentList.count+1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "textFieldCell", for: indexPath) as! addViewTableViewCell
-        cell.listNameTextField.text = name
+        
         return cell
     }
     

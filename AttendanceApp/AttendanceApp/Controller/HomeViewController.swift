@@ -3,18 +3,26 @@ import RealmSwift
 
 class HomeViewController: UIViewController{
     
+    @IBOutlet weak var groupListTableView: UICollectionView!
+    
     private let realm = try! Realm()
     private var attendances:[Attendance] = []
+    
     //MARK: - Realm
     func getAllAttendance(){
+        
     }
     func deleteAttendance(item: Attendance){
     }
     //MARK: - Realm End
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         attendances = realm.objects(Attendance.self).map({$0})
-
+        groupListTableView.reloadData()
     }
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
@@ -38,9 +46,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let CalendarVC = storyboard.instantiateViewController(identifier: "CalendarVC")
-        navigationController?.pushViewController(CalendarVC, animated: true)
+        if attendances.count == 0{
+            
+        }else{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let CalendarVC = storyboard.instantiateViewController(identifier: "CalendarVC")
+            navigationController?.pushViewController(CalendarVC, animated: true)
+        }
+        
     }
     
 }

@@ -109,6 +109,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="groupListTableView" destination="9LH-9y-Ax5" id="YqF-pa-wBi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJ0-QB-JaU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -217,6 +220,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="groupNameTextField" destination="3Nx-lN-Dwl" id="sMn-ZU-uT6"/>
+                        <outlet property="insertStudentNameTableView" destination="Z9A-OY-hVH" id="nRh-Sj-KEi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KfG-aP-zq8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
