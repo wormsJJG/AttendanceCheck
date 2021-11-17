@@ -7,29 +7,23 @@
 
 import UIKit
 
-class addViewTableViewCell: UITableViewCell,UITextFieldDelegate {
+class addViewTableViewCell: UITableViewCell{
     @IBOutlet weak var listNameTextField: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         setUp()
-        
     }
     fileprivate func setUp(){
         listNameTextField.returnKeyType = .done
         listNameTextField.delegate = self
     }
-    
-    var studentList:[Student] = []
-
-    func addStudentList(_ name:String){
-        let student = Student()
-        student.name = name
-        studentList.append(student)
-    }
+}
+extension addViewTableViewCell:UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        addStudentList(listNameTextField.text ?? "nil")
-        print(studentList)
-        print(studentList.count)
+        textField.resignFirstResponder()
         return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        NotificationCenter.default.post(name: Notification.Name("student"), object: self, userInfo: ["student": listNameTextField.text ?? "nil"])
     }
 }
