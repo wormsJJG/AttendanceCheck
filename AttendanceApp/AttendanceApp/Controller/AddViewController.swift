@@ -8,8 +8,15 @@
 import UIKit
 import RealmSwift
 
-class AddViewController: UIViewController {
-///MARK - Realm
+class AddViewController: UIViewController,UITextFieldDelegate {
+    
+    let cell = addViewTableViewCell()
+    @IBOutlet weak var insertStudentNameTableView: UITableView!
+    @IBAction func AddButton(_ sender: Any) {
+        createAttendanceCheckGroup()
+    }
+    
+    ///MARK - Realm
     let realm = try! Realm()
     
     @IBOutlet weak var groupNameTextField: UITextField!
@@ -19,38 +26,30 @@ class AddViewController: UIViewController {
         if let groupName = groupNameTextField.text {
             attendance.groupName = groupName
         }
+        
         try! realm.write{
             realm.add(attendance)
+            navigationController?.popViewController(animated: true)
         }
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
     }
-//    func addAttendanceCheckGroup(_ groupName:String,_ nameList:[String])->Attendance{
-//        let attendance = Attendance()
-//        return attendance
-//    }
-        override func viewDidLoad() {
+
+    override func viewDidLoad() {
         super.viewDidLoad()
     }
-    struct Student {
-        var name:String
-    }
-    
-    var list:[Student] = [Student(name: "")]
-    
-    func create(_ student:Student){
-        list.append(student)
+    override func viewWillAppear(_ animated: Bool) {
+        insertStudentNameTableView.reloadData()
     }
     
 }
-
 ///MARK - TableViewSetup
 extension AddViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 11
+        return cell.studentList.count+1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "textFieldCell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "textFieldCell", for: indexPath) as! addViewTableViewCell
         
         return cell
     }

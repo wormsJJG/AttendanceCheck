@@ -7,13 +7,29 @@
 
 import UIKit
 
-class addViewTableViewCell: UITableViewCell {
-   
+class addViewTableViewCell: UITableViewCell,UITextFieldDelegate {
     @IBOutlet weak var listNameTextField: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setUp()
+        
     }
+    fileprivate func setUp(){
+        listNameTextField.returnKeyType = .done
+        listNameTextField.delegate = self
+    }
+    
+    var studentList:[Student] = []
 
-
+    func addStudentList(_ name:String){
+        let student = Student()
+        student.name = name
+        studentList.append(student)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        addStudentList(listNameTextField.text ?? "nil")
+        print(studentList)
+        print(studentList.count)
+        return true
+    }
 }
