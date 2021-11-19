@@ -30,6 +30,9 @@ class AddViewController: UIViewController,UITextFieldDelegate {
         let attendance = Attendance()
         if let groupName = groupNameTextField.text {
             attendance.groupName = groupName
+            attendance.nameList = List(self.studentList)
+                
+        
         }
         try! realm.write{
             realm.add(attendance)
@@ -48,19 +51,18 @@ class AddViewController: UIViewController,UITextFieldDelegate {
         setUp()
     }
     override func viewWillAppear(_ animated: Bool) {
-        insertStudentNameTableView.reloadData()
     }
     
     func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(addStudent(_:)), name: Notification.Name("student"), object: nil)
+
     }
     @objc func addStudent(_ notification: Notification){
         let studentList = notification.userInfo?["student"] as! String
         let student = Student()
         student.name = studentList
         create(student)
-        print(self.studentList)
-        insertStudentNameTableView.reloadData()
+        insertStudentNameTableView.insertRows(at: [IndexPath(row: self.studentList.count, section: 0)], with: .none)
     }
 }
 ///MARK - TableViewSetup

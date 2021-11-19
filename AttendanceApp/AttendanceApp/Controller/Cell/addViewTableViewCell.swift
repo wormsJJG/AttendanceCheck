@@ -25,5 +25,6 @@ extension addViewTableViewCell:UITextFieldDelegate{
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         NotificationCenter.default.post(name: Notification.Name("student"), object: self, userInfo: ["student": listNameTextField.text ?? "nil"])
+        
     }
 }
