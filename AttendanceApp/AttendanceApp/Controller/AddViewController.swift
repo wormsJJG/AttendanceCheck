@@ -11,6 +11,7 @@ import RealmSwift
 class AddViewController: UIViewController,UITextFieldDelegate {
     var studentList:[Student] = []
 
+   
     func create(_ student: Student){
         studentList.append(student)
     }
@@ -30,16 +31,12 @@ class AddViewController: UIViewController,UITextFieldDelegate {
         let attendance = Attendance()
         if let groupName = groupNameTextField.text {
             attendance.groupName = groupName
-            attendance.nameList = List(self.studentList)
-                
-        
+            attendance.nameList.append(objectsIn: studentList)
         }
         try! realm.write{
             realm.add(attendance)
             navigationController?.popViewController(animated: true)
         }
-        
-        
     }
     ///MARK - Realm End
     fileprivate func setUp(){
