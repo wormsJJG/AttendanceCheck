@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IQI-BQ-Mwg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IQI-BQ-Mwg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -116,21 +116,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJ0-QB-JaU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="167" y="-74"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="1bc-Mu-JKF">
-            <objects>
-                <viewController id="RlO-97-7ue" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kop-6g-IOR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="90M-Mk-d90"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cC5-cc-Dap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1500" y="204"/>
         </scene>
         <!--출석부 추가-->
         <scene sceneID="0Ot-LO-CVG">
@@ -300,7 +285,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="46" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LoZ-SW-shJ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listNameCell" id="W4w-Oh-otc" customClass="ListNameTableViewCell" customModule="AttendanceApp" customModuleProvider="target">
@@ -348,7 +333,7 @@
                         <viewLayoutGuide key="safeArea" id="D0I-wO-jRq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LoZ-SW-shJ" firstAttribute="top" secondItem="D0I-wO-jRq" secondAttribute="top" id="6VH-4D-HAv"/>
+                            <constraint firstItem="LoZ-SW-shJ" firstAttribute="top" secondItem="D0I-wO-jRq" secondAttribute="top" constant="10" id="6VH-4D-HAv"/>
                             <constraint firstItem="LoZ-SW-shJ" firstAttribute="leading" secondItem="Pk2-Xc-gwa" secondAttribute="leading" id="7nA-Tw-r4l"/>
                             <constraint firstAttribute="trailing" secondItem="LoZ-SW-shJ" secondAttribute="trailing" id="L6t-5x-TnQ"/>
                             <constraint firstItem="LoZ-SW-shJ" firstAttribute="bottom" secondItem="D0I-wO-jRq" secondAttribute="bottom" id="Vsg-0e-Osj"/>

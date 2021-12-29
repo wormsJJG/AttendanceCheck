@@ -49,8 +49,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
         }else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let CalendarVC = storyboard.instantiateViewController(identifier: "CalendarVC")
-            navigationController?.pushViewController(CalendarVC, animated: true)
+            let calendarVC = storyboard.instantiateViewController(identifier: "CalendarVC") as! CalendarViewController
+            let attendanceData = attendances[indexPath.item]
+            calendarVC.groupName = attendanceData.groupName
+            calendarVC.nameList = attendanceData.nameList
+            calendarVC.selectItem = attendanceData
+            navigationController?.pushViewController(calendarVC, animated: true)
+            
         }
         
     }

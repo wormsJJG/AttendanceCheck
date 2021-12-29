@@ -11,7 +11,6 @@ import RealmSwift
 class AddViewController: UIViewController,UITextFieldDelegate {
     var studentList:[Student] = []
 
-   
     func create(_ student: Student){
         studentList.append(student)
     }
