@@ -13,21 +13,24 @@ class ShowViewController: UIViewController {
     var groupName:String?
     var nameList = List<Student>()
     var selectItem:Attendance!
-    
+    var selectDate: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
+    }
+    fileprivate func setUp(){
+        navigationItem.title = selectDate
     }
 }
 
 extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return nameList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNameCell", for: indexPath) as! ListNameTableViewCell
-        
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {

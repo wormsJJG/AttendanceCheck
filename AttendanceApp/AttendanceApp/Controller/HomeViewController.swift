@@ -7,7 +7,6 @@ class HomeViewController: UIViewController{
     
     private let realm = try! Realm()
     private var attendances:[Attendance] = []
-    
     //MARK: - Realm
     func getAllAttendance(){
         
@@ -18,7 +17,6 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         attendances = realm.objects(Attendance.self).map({$0})
         groupListTableView.reloadData()
