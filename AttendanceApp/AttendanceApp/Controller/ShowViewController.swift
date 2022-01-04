@@ -14,7 +14,6 @@ class ShowViewController: UIViewController {
     var nameList = List<Student>()
     var selectItem:Attendance!
     var selectDate: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -31,6 +30,7 @@ extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNameCell", for: indexPath) as! ListNameTableViewCell
+        cell.nameListLabel.text = nameList[indexPath.row].name
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
