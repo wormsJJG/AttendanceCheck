@@ -27,13 +27,15 @@ class AddViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var groupNameTextField: UITextField!
     
     func createAttendanceCheckGroup(){
+        let className = ClassName()
         let attendance = Attendance()
         if let groupName = groupNameTextField.text {
-            attendance.groupName = groupName
-            attendance.nameList.append(objectsIn: studentList)
+            className.groupName = groupName
+            attendance.studentList.append(objectsIn: studentList)
+            className.attendanceList.append(attendance)
         }
         try! realm.write{
-            realm.add(attendance)
+            realm.add(className)
             navigationController?.popViewController(animated: true)
         }
     }
@@ -54,9 +56,9 @@ class AddViewController: UIViewController,UITextFieldDelegate {
 
     }
     @objc func addStudent(_ notification: Notification){
-        let studentList = notification.userInfo?["student"] as! String
+        let studentName = notification.userInfo?["student"] as! String// String
         let student = Student()
-        student.name = studentList
+        student.name = studentName
         create(student)
         insertStudentNameTableView.insertRows(at: [IndexPath(row: self.studentList.count, section: 0)], with: .none)
     }

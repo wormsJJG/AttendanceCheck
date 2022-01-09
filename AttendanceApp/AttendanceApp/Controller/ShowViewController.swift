@@ -12,15 +12,15 @@ class ShowViewController: UIViewController {
     
     var groupName:String?
     var nameList = List<Student>()
-    var selectItem:Attendance!
-    var selectDate: String?
+    var selectItem:ClassName!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
     }
     fileprivate func setUp(){
-        navigationItem.title = selectDate
+        navigationItem.title = "Attendance"
     }
+    
 }
 
 extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
@@ -31,6 +31,7 @@ extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNameCell", for: indexPath) as! ListNameTableViewCell
         cell.nameListLabel.text = nameList[indexPath.row].name
+        
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,7 +44,7 @@ extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
         attendanceCheck()
     }
     func attendanceCheck(){
-        let alert = UIAlertController(title: "정재근", message: "", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertController.Style.alert)
         let attendanceButton = UIAlertAction(title: "출석", style: .default) {(action) in }
         let tardyButton = UIAlertAction(title: "지각", style: .default) {(action) in }
         let absentButton = UIAlertAction(title: "결석", style: .default) {(action) in }
