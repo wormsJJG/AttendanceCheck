@@ -11,7 +11,6 @@ import RealmSwift
 class ShowViewController: UIViewController {
     
     var groupName:String?
-    var nameList = List<Student>()
     var selectItem:ClassName!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,7 @@ class ShowViewController: UIViewController {
 
 extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameList.count
+        return selectItem.attendanceList.studentList
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

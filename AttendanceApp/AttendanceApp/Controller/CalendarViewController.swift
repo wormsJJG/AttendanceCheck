@@ -5,9 +5,8 @@ import RealmSwift
 class CalendarViewController: UIViewController{
     @IBOutlet weak var calendar: FSCalendar!
     private let dateFormatter = DateFormatter()
-    var groupName:String?
-    var nameList = List<Attendance>()
-    var selectItem:ClassName!
+    var selectItem: ClassName!
+    lazy var attendance = selectItem.attendanceList
     
     var studentList:[Student] = []
     override func viewDidLoad() {
@@ -24,11 +23,11 @@ class CalendarViewController: UIViewController{
 }
 extension CalendarViewController: FSCalendarDelegate,FSCalendarDataSource{
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
-//        status.date = dateFormatter.string(from: date)
+        let selectDate = dateFormatter.string(from: date)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let showVC = storyboard.instantiateViewController(identifier: "ShowVC") as! ShowViewController
         showVC.selectItem = selectItem
-        showVC.groupName = groupName
         navigationController?.pushViewController(showVC, animated: true)
         
     }   
