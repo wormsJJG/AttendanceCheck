@@ -11,6 +11,7 @@ import RealmSwift
 class ShowViewController: UIViewController {
     
     var groupName:String?
+    var selectDate: String?
     var selectItem:ClassName!
     var attendance:Attendance!
     override func viewDidLoad() {
@@ -18,7 +19,7 @@ class ShowViewController: UIViewController {
         setUp()
     }
     fileprivate func setUp(){
-        navigationItem.title = "Attendance"
+        navigationItem.title =  selectDate
     }
     
 }

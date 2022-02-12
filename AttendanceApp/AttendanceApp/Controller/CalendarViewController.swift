@@ -27,11 +27,13 @@ extension CalendarViewController: FSCalendarDelegate,FSCalendarDataSource{
         let attendanceList = selectItem.attendanceList
         let selectedAttendances = attendanceList.filter{ $0.date == selectDate }
         if selectedAttendances.first != nil{
+            showVC.selectDate = selectDate
             showVC.selectItem = selectItem
             showVC.attendance = selectedAttendances.first
         }else {
             let newAttendance = Attendance()
             newAttendance.studentList = selectItem.attendanceList.first!.studentList
+            showVC.selectDate = selectDate
             newAttendance.date = selectDate
             showVC.selectItem = selectItem
             showVC.attendance = newAttendance
