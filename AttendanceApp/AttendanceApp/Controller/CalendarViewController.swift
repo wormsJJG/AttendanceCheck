@@ -6,8 +6,6 @@ class CalendarViewController: UIViewController{
     @IBOutlet weak var calendar: FSCalendar!
     private let dateFormatter = DateFormatter()
     var selectItem: ClassName!
-    lazy var attendance = selectItem.attendanceList
-    
     var studentList:[Student] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +21,21 @@ class CalendarViewController: UIViewController{
 }
 extension CalendarViewController: FSCalendarDelegate,FSCalendarDataSource{
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
-        let selectDate = dateFormatter.string(from: date)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let showVC = storyboard.instantiateViewController(identifier: "ShowVC") as! ShowViewController
-        showVC.selectItem = selectItem
+        let selectDate = dateFormatter.string(from: date)
+        let attendanceList = selectItem.attendanceList
+        let selectedAttendances = attendanceList.filter{ $0.date == selectDate }
+        if selectedAttendances.first != nil{
+            showVC.selectItem = selectItem
+            showVC.attendance = selectedAttendances.first
+        }else {
+            let newAttendance = Attendance()
+            newAttendance.studentList = selectItem.attendanceList.first!.studentList
+            newAttendance.date = selectDate
+            showVC.selectItem = selectItem
+            showVC.attendance = newAttendance
+        }
         navigationController?.pushViewController(showVC, animated: true)
-        
     }   
 }

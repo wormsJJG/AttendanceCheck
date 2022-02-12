@@ -12,6 +12,7 @@ class ShowViewController: UIViewController {
     
     var groupName:String?
     var selectItem:ClassName!
+    var attendance:Attendance!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -24,12 +25,12 @@ class ShowViewController: UIViewController {
 
 extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectItem.attendanceList.studentList
+        return attendance.studentList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNameCell", for: indexPath) as! ListNameTableViewCell
-        cell.nameListLabel.text = nameList[indexPath.row].name
+        cell.nameListLabel.text = attendance.studentList[indexPath.row].name
         
         return cell
     }
@@ -40,19 +41,9 @@ extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
         return "명단"
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        attendanceCheck()
+        let cell = tableView.visibleCells[indexPath.row] as! ListNameTableViewCell
+        cell.showAttendanceAlert(viewController: self)
+    
     }
-    func attendanceCheck(){
-        let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertController.Style.alert)
-        let attendanceButton = UIAlertAction(title: "출석", style: .default) {(action) in }
-        let tardyButton = UIAlertAction(title: "지각", style: .default) {(action) in }
-        let absentButton = UIAlertAction(title: "결석", style: .default) {(action) in }
-        let cancelButton = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel) {(action) in }
-        
-        alert.addAction(attendanceButton)
-        alert.addAction(tardyButton)
-        alert.addAction(absentButton)
-        alert.addAction(cancelButton)
-        present(alert, animated: false, completion: nil)
-    }
+ 
 }
