@@ -7,12 +7,14 @@ class HomeViewController: UIViewController{
     
     private let realm = try! Realm()
     private var className:[ClassName] = []
+    let fileURL = Realm.Configuration.defaultConfiguration.fileURL
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
         className = realm.objects(ClassName.self).map({$0})
         groupListTableView.reloadData()
+        print(fileURL)
     }
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{

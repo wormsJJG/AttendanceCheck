@@ -12,7 +12,7 @@ class ListNameTableViewCell: UITableViewCell {
     // 디비에 status값 저장하기
     @IBOutlet weak var nameListLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    
+    let showVC = ShowViewController()
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()
@@ -29,14 +29,17 @@ class ListNameTableViewCell: UITableViewCell {
         let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertController.Style.alert)
         let attendanceButton = UIAlertAction(title: "출석", style: .default) { _ in
             self.statusLabel.text = "출석"
+            NotificationCenter.default.post(name: Notification.Name("status"), object: self, userInfo: ["status": self.statusLabel.text ?? "nil"])
             self.statusLabel.textColor = .green
         }
         let tardyButton = UIAlertAction(title: "지각", style: .default) { _ in
             self.statusLabel.text = "지각"
+            NotificationCenter.default.post(name: Notification.Name("status"), object: self, userInfo: ["status": self.statusLabel.text ?? "nil"])
             self.statusLabel.textColor = .red
         }
         let absentButton = UIAlertAction(title: "결석", style: .default) { _ in
             self.statusLabel.text = "결석"
+            NotificationCenter.default.post(name: Notification.Name("status"), object: self, userInfo: ["status": self.statusLabel.text ?? "nil"])
             self.statusLabel.textColor = .yellow
         }
         let cancelButton = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel) { _ in
