@@ -27,9 +27,6 @@ extension CalendarViewController: FSCalendarDelegate,FSCalendarDataSource{
         let selectDate = dateFormatter.string(from: date)
         let attendanceList = selectItem.attendanceList
         let selectedAttendances = attendanceList.filter{ $0.date == selectDate }
-        for a in selectedAttendances {
-            print(a.date)
-        }
         if selectedAttendances.first != nil{
             showVC.selectDate = selectDate
             showVC.selectItem = selectItem
@@ -40,6 +37,9 @@ extension CalendarViewController: FSCalendarDelegate,FSCalendarDataSource{
             showVC.selectDate = selectDate
             newAttendance.date = selectDate
             try! realm.write {
+                for a in 0...newAttendance.studentList.count-1 {
+                    newAttendance.studentList[a].status = ""
+                }
                 self.selectItem.attendanceList.append(newAttendance)
             }
             showVC.selectItem = selectItem

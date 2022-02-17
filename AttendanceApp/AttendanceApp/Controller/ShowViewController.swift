@@ -24,7 +24,7 @@ class ShowViewController: UIViewController {
     fileprivate func setUp(){
         navigationItem.title =  selectDate
         try! realm.write {
-            attendance.date = selectDate ?? "123"
+            attendance.date = selectDate ?? ""
         }
     }
     @IBAction func saveButton(_ sender: Any) {
