@@ -7,6 +7,7 @@ class CalendarViewController: UIViewController{
     private let dateFormatter = DateFormatter()
     var selectItem: ClassName!
     var studentList:[Student] = []
+    let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFSCalendar()
@@ -26,6 +27,9 @@ extension CalendarViewController: FSCalendarDelegate,FSCalendarDataSource{
         let selectDate = dateFormatter.string(from: date)
         let attendanceList = selectItem.attendanceList
         let selectedAttendances = attendanceList.filter{ $0.date == selectDate }
+        for a in selectedAttendances {
+            print(a.date)
+        }
         if selectedAttendances.first != nil{
             showVC.selectDate = selectDate
             showVC.selectItem = selectItem
@@ -35,6 +39,9 @@ extension CalendarViewController: FSCalendarDelegate,FSCalendarDataSource{
             newAttendance.studentList = selectItem.attendanceList.first!.studentList
             showVC.selectDate = selectDate
             newAttendance.date = selectDate
+            try! realm.write {
+                self.selectItem.attendanceList.append(newAttendance)
+            }
             showVC.selectItem = selectItem
             showVC.attendance = newAttendance
         }

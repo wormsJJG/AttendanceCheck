@@ -339,7 +339,19 @@
                             <constraint firstItem="LoZ-SW-shJ" firstAttribute="bottom" secondItem="D0I-wO-jRq" secondAttribute="bottom" id="Vsg-0e-Osj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="출석부" id="sWZ-Ne-fjN"/>
+                    <navigationItem key="navigationItem" title="출석부" id="sWZ-Ne-fjN">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="4Lg-9m-aoo">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Stt-xC-aQQ">
+                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="저장"/>
+                            </button>
+                            <connections>
+                                <action selector="saveButton:" destination="1BR-3v-1E2" id="NR9-oh-Fjf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjx-fw-ENf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

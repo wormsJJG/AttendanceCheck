@@ -10,7 +10,7 @@ class HomeViewController: UIViewController{
     let fileURL = Realm.Configuration.defaultConfiguration.fileURL
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        }
     override func viewWillAppear(_ animated: Bool) {
         className = realm.objects(ClassName.self).map({$0})
         groupListTableView.reloadData()

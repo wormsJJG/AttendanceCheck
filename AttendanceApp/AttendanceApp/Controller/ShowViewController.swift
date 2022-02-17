@@ -16,22 +16,20 @@ class ShowViewController: UIViewController {
     var attendance:Attendance!
     var studentStatus: String?
     let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
     }
     fileprivate func setUp(){
         navigationItem.title =  selectDate
-        addObserver()
+        try! realm.write {
+            attendance.date = selectDate ?? "123"
+        }
     }
-    func addObserver(){
-        NotificationCenter.default.addObserver(self, selector: #selector(inputStatus(_:)), name: Notification.Name("status"), object: nil)
+    @IBAction func saveButton(_ sender: Any) {
+        
     }
-    @objc func inputStatus(_ notification: Notification){
-        let status = notification.userInfo?["status"] as! String
-        studentStatus = status
-    }
-    
 }
 
 extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
@@ -42,6 +40,7 @@ extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNameCell", for: indexPath) as! ListNameTableViewCell
         cell.nameListLabel.text = attendance.studentList[indexPath.row].name
+        cell.statusLabel.text = attendance.studentList[indexPath.row].status
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,8 +51,6 @@ extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.visibleCells[indexPath.row] as! ListNameTableViewCell
-        cell.showAttendanceAlert(viewController: self)
-        
+        cell.showAttendanceAlert(viewController: self, attendance: attendance, index: indexPath.row)
     }
- 
 }
