@@ -77,6 +77,7 @@
                                         <size key="customSize" width="369" height="100"/>
                                         <connections>
                                             <outlet property="groupNameLabel" destination="qsm-sK-Dmw" id="TFu-oA-Iqv"/>
+                                            <outlet property="uiView" destination="Arl-5l-lKO" id="kgL-cY-3Vd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -115,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJ0-QB-JaU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="167" y="-74"/>
+            <point key="canvasLocation" x="166.66666666666669" y="-74.330357142857139"/>
         </scene>
         <!--출석부 추가-->
         <scene sceneID="0Ot-LO-CVG">

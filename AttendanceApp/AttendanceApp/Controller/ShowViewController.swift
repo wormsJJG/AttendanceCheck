@@ -41,6 +41,13 @@ extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNameCell", for: indexPath) as! ListNameTableViewCell
         cell.nameListLabel.text = attendance.studentList[indexPath.row].name
         cell.statusLabel.text = attendance.studentList[indexPath.row].status
+        if attendance.studentList[indexPath.row].status == "출석" {
+            cell.statusLabel.textColor = .green
+        } else if attendance.studentList[indexPath.row].status == "지각" {
+            cell.statusLabel.textColor = .red
+        } else if attendance.studentList[indexPath.row].status == "결석" {
+            cell.statusLabel.textColor = .yellow
+        }
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
