@@ -11,26 +11,36 @@ import RealmSwift
 class ShowViewController: UIViewController {
     
     var groupName:String?
+    var selectDate: String?
     var selectItem:ClassName!
+    var attendance:Attendance!
+    var studentStatus: String?
+    let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
     }
     fileprivate func setUp(){
-        navigationItem.title = "Attendance"
+        navigationItem.title =  selectDate
+        try! realm.write {
+            attendance.date = selectDate ?? ""
+        }
     }
-    
+    @IBAction func saveButton(_ sender: Any) {
+        
+    }
 }
 
 extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectItem.attendanceList.studentList
+        return attendance.studentList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNameCell", for: indexPath) as! ListNameTableViewCell
-        cell.nameListLabel.text = nameList[indexPath.row].name
-        
+        cell.nameListLabel.text = attendance.studentList[indexPath.row].name
+        cell.statusLabel.text = attendance.studentList[indexPath.row].status
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,19 +50,7 @@ extension ShowViewController: UITableViewDataSource, UITableViewDelegate{
         return "명단"
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        attendanceCheck()
-    }
-    func attendanceCheck(){
-        let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertController.Style.alert)
-        let attendanceButton = UIAlertAction(title: "출석", style: .default) {(action) in }
-        let tardyButton = UIAlertAction(title: "지각", style: .default) {(action) in }
-        let absentButton = UIAlertAction(title: "결석", style: .default) {(action) in }
-        let cancelButton = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel) {(action) in }
-        
-        alert.addAction(attendanceButton)
-        alert.addAction(tardyButton)
-        alert.addAction(absentButton)
-        alert.addAction(cancelButton)
-        present(alert, animated: false, completion: nil)
+        let cell = tableView.visibleCells[indexPath.row] as! ListNameTableViewCell
+        cell.showAttendanceAlert(viewController: self, attendance: attendance, index: indexPath.row)
     }
 }
