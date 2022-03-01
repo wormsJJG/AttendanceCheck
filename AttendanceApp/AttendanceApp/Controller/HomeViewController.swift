@@ -56,6 +56,8 @@ class HomeViewController: UIViewController{
                     realm.delete(className[item])
                 }
                 groupListTableView.deleteItems(at: selectedItems)
+                className = realm.objects(ClassName.self).map({$0})
+                groupListTableView.reloadData()
             }
         }
     }

@@ -219,6 +219,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="g26-Tj-w2V" id="rCj-zV-RKc"/>
                         <outlet property="groupNameTextField" destination="3Nx-lN-Dwl" id="sMn-ZU-uT6"/>
                         <outlet property="insertStudentNameTableView" destination="Z9A-OY-hVH" id="nRh-Sj-KEi"/>
                     </connections>
