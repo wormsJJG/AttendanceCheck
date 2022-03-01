@@ -13,6 +13,7 @@ class ListNameTableViewCell: UITableViewCell {
     // 디비에 status값 저장하기
     @IBOutlet weak var nameListLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    
     let realm = try! Realm()
     let showVC = ShowViewController()
     override func awakeFromNib() {

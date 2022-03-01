@@ -11,6 +11,7 @@ import RealmSwift
 class AddViewController: UIViewController,UITextFieldDelegate {
     var studentList:[Student] = []
 
+    @IBOutlet weak var addButton: UIBarButtonItem!
     func create(_ student: Student){
         studentList.append(student)
     }
@@ -18,8 +19,10 @@ class AddViewController: UIViewController,UITextFieldDelegate {
     let cell = addViewTableViewCell()
     @IBOutlet weak var insertStudentNameTableView: UITableView!
     @IBAction func AddButton(_ sender: Any) {
+        
         createAttendanceCheckGroup()
     }
+    
     
     ///MARK - Realm
     let realm = try! Realm()
@@ -43,10 +46,19 @@ class AddViewController: UIViewController,UITextFieldDelegate {
     fileprivate func setUp(){
         addObserver()
         groupNameTextField.becomeFirstResponder()
+        groupNameTextField.delegate = self
+        textFieldDidChangeSelection(groupNameTextField)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+    }
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if groupNameTextField.text!.count > 0 {
+            addButton.isEnabled = true
+        }else{
+            addButton.isEnabled = false
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
     }
