@@ -61,13 +61,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Io8-1k-ZEZ">
+                                                    <rect key="frame" x="314" y="9" width="47" height="42"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="47" id="IOI-YP-uyj"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Io8-1k-ZEZ" secondAttribute="bottom" constant="47.5" id="DHg-7p-WTA"/>
                                                 <constraint firstItem="qsm-sK-Dmw" firstAttribute="leading" secondItem="u9l-ku-4gG" secondAttribute="leading" constant="40.5" id="P1L-8p-5aP"/>
+                                                <constraint firstItem="Io8-1k-ZEZ" firstAttribute="top" secondItem="u9l-ku-4gG" secondAttribute="topMargin" id="QC6-V7-BUu"/>
                                                 <constraint firstItem="qsm-sK-Dmw" firstAttribute="centerY" secondItem="u9l-ku-4gG" secondAttribute="centerY" constant="-14" id="RTv-gj-IgF"/>
                                                 <constraint firstItem="qsm-sK-Dmw" firstAttribute="centerY" secondItem="Arl-5l-lKO" secondAttribute="centerY" constant="-14" id="Rf1-ni-Td8"/>
                                                 <constraint firstAttribute="trailing" secondItem="Arl-5l-lKO" secondAttribute="trailing" constant="339" id="Uy8-Qc-1A3"/>
                                                 <constraint firstItem="Arl-5l-lKO" firstAttribute="leading" secondItem="u9l-ku-4gG" secondAttribute="leading" constant="-1" id="ZS0-Rq-34P"/>
+                                                <constraint firstItem="Io8-1k-ZEZ" firstAttribute="trailing" secondItem="u9l-ku-4gG" secondAttribute="trailingMargin" id="gSd-y9-czH"/>
                                                 <constraint firstItem="qsm-sK-Dmw" firstAttribute="centerX" secondItem="u9l-ku-4gG" secondAttribute="centerX" constant="21" id="q6N-4W-phB"/>
                                                 <constraint firstItem="qsm-sK-Dmw" firstAttribute="top" secondItem="u9l-ku-4gG" secondAttribute="top" constant="14" id="tFT-My-Q6H"/>
                                                 <constraint firstItem="Arl-5l-lKO" firstAttribute="top" secondItem="u9l-ku-4gG" secondAttribute="top" id="yeq-dj-gvU"/>
@@ -77,6 +87,7 @@
                                         <size key="customSize" width="369" height="100"/>
                                         <connections>
                                             <outlet property="groupNameLabel" destination="qsm-sK-Dmw" id="TFu-oA-Iqv"/>
+                                            <outlet property="selectIconView" destination="Io8-1k-ZEZ" id="1ll-pu-ugY"/>
                                             <outlet property="uiView" destination="Arl-5l-lKO" id="kgL-cY-3Vd"/>
                                         </connections>
                                     </collectionViewCell>
@@ -96,20 +107,7 @@
                             <constraint firstItem="9LH-9y-Ax5" firstAttribute="bottom" secondItem="6C8-Q5-LQk" secondAttribute="bottom" id="hlN-RM-FBh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="출석부 명단" largeTitleDisplayMode="always" id="vSp-1t-GmS">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="XXD-Zy-l2G">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="aeW-TR-oL0">
-                                <rect key="frame" x="20" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="선택"/>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gvn-an-drj">
-                            <connections>
-                                <segue destination="COH-P7-E8S" kind="show" id="zyt-LJ-mpY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="출석부 명단" largeTitleDisplayMode="always" id="vSp-1t-GmS"/>
                     <connections>
                         <outlet property="groupListTableView" destination="9LH-9y-Ax5" id="YqF-pa-wBi"/>
                     </connections>
@@ -118,16 +116,32 @@
             </objects>
             <point key="canvasLocation" x="166.66666666666669" y="-74.330357142857139"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Sy-7m-rfp">
+            <objects>
+                <navigationController id="ct1-3J-fx3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="28E-P7-Smi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="COH-P7-E8S" kind="relationship" relationship="rootViewController" id="Jve-iZ-2fO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nd8-i2-O9X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1280" y="-340"/>
+        </scene>
         <!--출석부 추가-->
         <scene sceneID="0Ot-LO-CVG">
             <objects>
-                <viewController id="COH-P7-E8S" customClass="AddViewController" customModule="AttendanceApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="COH-P7-E8S" customClass="AddViewController" customModule="AttendanceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l9Q-kT-74f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Z9A-OY-hVH">
-                                <rect key="frame" x="0.0" y="238" width="414" height="624"/>
+                                <rect key="frame" x="0.0" y="186" width="414" height="676"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="textFieldCell" id="7d7-pP-Bgh" customClass="addViewTableViewCell" customModule="AttendanceApp" customModuleProvider="target">
@@ -163,7 +177,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fPm-Ph-Rk0">
-                                <rect key="frame" x="20" y="172" width="374" height="58"/>
+                                <rect key="frame" x="20" y="120" width="374" height="58"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCA-gX-u1S">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="16"/>
@@ -360,6 +374,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
